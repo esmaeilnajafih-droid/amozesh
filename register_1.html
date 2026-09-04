@@ -518,6 +518,7 @@ nav ul a.active {
     text-align: center;
     font-family: inherit;
     transition: border-color 0.3s;
+    direction: ltr;
 }
 
 .code-section .code-input-group input:focus {
@@ -593,6 +594,7 @@ nav ul a.active {
     border-radius: 10px;
     font-weight: bold;
     color: #333;
+    font-size: 1.2rem;
 }
 
 footer {
@@ -633,6 +635,182 @@ h2 {
     text-align: center;
 }
 
+/* ===== پنل مدیریت (مخفی) ===== */
+.admin-panel {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.admin-panel h2 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.admin-panel .admin-subtitle {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.admin-panel .admin-warning {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: #fff3cd;
+    border-radius: 8px;
+    border-right: 4px solid #FFD93D;
+}
+
+.admin-panel .add-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.admin-panel .add-section h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.admin-panel .add-section .add-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.admin-panel .add-section .add-group input {
+    padding: 0.7rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    width: 200px;
+    direction: ltr;
+}
+
+.admin-panel .add-section .add-group input:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+.admin-panel .add-section .add-group .btn-add {
+    padding: 0.7rem 2rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.admin-panel .add-section .add-group .btn-add:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.admin-panel .add-section .add-message {
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.admin-panel .add-section .add-message.success {
+    color: #4ECDC4;
+    display: block;
+}
+
+.admin-panel .add-section .add-message.error {
+    color: #FF6B6B;
+    display: block;
+}
+
+.admin-panel .codes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.admin-panel .codes-table th {
+    background: #667eea;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.admin-panel .codes-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-panel .codes-table tr:hover {
+    background: #f8f9fa;
+}
+
+.admin-panel .codes-table .code-box {
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.admin-panel .codes-table .status-active {
+    color: #4ECDC4;
+    font-weight: bold;
+}
+
+.admin-panel .codes-table .btn-remove {
+    padding: 0.3rem 1rem;
+    background: #FF6B6B;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.admin-panel .codes-table .btn-remove:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.admin-panel .admin-buttons {
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.admin-panel .admin-buttons .btn-reset {
+    padding: 0.7rem 2rem;
+    background: #FFD93D;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: inherit;
+    text-decoration: none;
+}
+
+.admin-panel .admin-buttons .btn-reset:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 217, 61, 0.4);
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -665,6 +843,24 @@ h2 {
     .code-section .code-input-group input {
         width: 100%;
     }
+    
+    .admin-panel .add-section .add-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .admin-panel .add-section .add-group input {
+        width: 100%;
+    }
+    
+    .admin-panel .codes-table {
+        font-size: 0.9rem;
+    }
+    
+    .admin-panel .codes-table th,
+    .admin-panel .codes-table td {
+        padding: 8px;
+    }
 }
 
     </style>
@@ -680,6 +876,7 @@ h2 {
                 <li><a href="scratchjr.html" class="">🎮 اسکرچ جونیور</a></li>
                 <li><a href="scratch.html" class="">🐱 اسکرچ</a></li>
                 <li><a href="about.html" class="">❓ درباره ما</a></li>
+                <!-- لینک مدیریت مخفی شده - کاربران نمی‌بینن -->
             </ul>
             <form action="search.html" method="get" class="search-form">
                 <input type="text" name="q" placeholder="🔍 جستجو..." required>
@@ -700,11 +897,11 @@ h2 {
             <p class="code-desc">برای دسترسی به جلسه اول، کد را وارد کنید</p>
             
             <div class="code-input-group">
-                <input type="text" id="codeInput" placeholder="مثلاً: 1234" maxlength="10">
+                <input type="text" id="codeInput" placeholder="کد را وارد کنید..." maxlength="10" dir="ltr">
                 <button class="btn-verify" onclick="verifyCode()">✅ تایید کد</button>
             </div>
             
-            <div id="codeError" class="code-error">❌ کد وارد شده صحیح نیست! لطفاً دوباره امتحان کنید.</div>
+            <div id="codeError" class="code-error">❌ کد وارد شده صحیح نیست!</div>
             <div id="codeSuccess" class="code-success">✅ کد صحیح است! در حال انتقال به جلسه اول...</div>
             
             <div class="no-code">
@@ -730,8 +927,18 @@ h2 {
     </div>
     
     <script>
-        // کد صحیح (میشه اینجا تغییرش داد)
-        const CORRECT_CODE = "1234";
+        // ===== بارگذاری کدها از LocalStorage =====
+        function loadCodes() {
+            const saved = localStorage.getItem('scratchCodes');
+            if (saved) {
+                return JSON.parse(saved);
+            }
+            const defaultCodes = ["1234", "5678", "9012", "3456", "7890"];
+            localStorage.setItem('scratchCodes', JSON.stringify(defaultCodes));
+            return defaultCodes;
+        }
+        
+        const VALID_CODES = loadCodes();
         
         function verifyCode() {
             const input = document.getElementById('codeInput');
@@ -740,7 +947,6 @@ h2 {
             const videoSection = document.getElementById('videoSection');
             const code = input.value.trim();
             
-            // مخفی کردن پیام‌های قبلی
             errorDiv.style.display = 'none';
             successDiv.style.display = 'none';
             videoSection.style.display = 'none';
@@ -751,23 +957,20 @@ h2 {
                 return;
             }
             
-            if (code === CORRECT_CODE) {
+            if (VALID_CODES.includes(code)) {
                 successDiv.style.display = 'block';
-                // بعد از ۱ ثانیه ویدیو رو نشون بده
                 setTimeout(function() {
                     videoSection.style.display = 'block';
-                    // اسکرول به بخش ویدیو
                     videoSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 1000);
             } else {
-                errorDiv.textContent = '❌ کد وارد شده صحیح نیست! لطفاً دوباره امتحان کنید.';
+                errorDiv.textContent = '❌ کد وارد شده اشتباه است! لطفاً دوباره امتحان کنید.';
                 errorDiv.style.display = 'block';
                 input.value = '';
                 input.focus();
             }
         }
         
-        // با زدن Enter هم کار کنه
         document.getElementById('codeInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 verifyCode();
