@@ -411,6 +411,7 @@ nav ul a.active {
     margin-top: 2rem;
 }
 
+/* ===== صفحه ثبت‌نام با کد ===== */
 .register-page {
     background: white;
     padding: 3rem;
@@ -481,6 +482,119 @@ nav ul a.active {
     padding: 1rem;
 }
 
+/* ===== بخش کد ===== */
+.code-section {
+    background: #f0f4ff;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    border: 2px dashed #667eea;
+}
+
+.code-section .code-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.code-section .code-desc {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.code-section .code-input-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.code-section .code-input-group input {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    width: 250px;
+    text-align: center;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.code-section .code-input-group input:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+.code-section .code-input-group .btn-verify {
+    padding: 0.8rem 2.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.code-section .code-input-group .btn-verify:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+}
+
+.code-section .code-error {
+    color: #FF6B6B;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: none;
+}
+
+.code-section .code-success {
+    color: #4ECDC4;
+    font-weight: bold;
+    margin-top: 1rem;
+    display: none;
+}
+
+.code-section .no-code {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #fff3cd;
+    border-radius: 12px;
+    border-right: 4px solid #FFD93D;
+}
+
+.code-section .no-code p {
+    color: #856404;
+    margin: 0.3rem 0;
+}
+
+.code-section .no-code .ble-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background: #4ECDC4;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.code-section .no-code .ble-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+}
+
+.code-section .no-code .ble-id {
+    background: #e8e8e8;
+    padding: 0.2rem 0.8rem;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
 footer {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
@@ -547,6 +661,10 @@ h2 {
         flex-direction: column;
         align-items: center;
     }
+    
+    .code-section .code-input-group input {
+        width: 100%;
+    }
 }
 
     </style>
@@ -573,24 +691,89 @@ h2 {
     <main class="container">
         
     <div class="register-page">
-        <span class="success-icon">🎉</span>
-        <h2>ثبت‌نام شما با موفقیت انجام شد!</h2>
-        <p class="message">به دوره زیر خوش آمدید:</p>
+        <span class="success-icon">🔐</span>
+        <h2 style="color: #667eea;">ثبت‌نام در دوره</h2>
         <p class="course-name">🎮 آشنایی با اسکرچ جونیور</p>
         
-        
-        <div class="video-section">
-            <h3>🎬 جلسه اول</h3>
-            <p style="color: #666; margin-bottom: 1rem;">برای مشاهده جلسه اول روی دکمه زیر کلیک کنید:</p>
-            <a href="https://www.aparat.com/v/bewg9bw" target="_blank" class="video-link">▶️ مشاهده جلسه اول</a>
+        <div class="code-section">
+            <div class="code-title">📝 کد ثبت‌نام خود را وارد کنید</div>
+            <p class="code-desc">برای دسترسی به جلسه اول، کد را وارد کنید</p>
+            
+            <div class="code-input-group">
+                <input type="text" id="codeInput" placeholder="مثلاً: 1234" maxlength="10">
+                <button class="btn-verify" onclick="verifyCode()">✅ تایید کد</button>
+            </div>
+            
+            <div id="codeError" class="code-error">❌ کد وارد شده صحیح نیست! لطفاً دوباره امتحان کنید.</div>
+            <div id="codeSuccess" class="code-success">✅ کد صحیح است! در حال انتقال به جلسه اول...</div>
+            
+            <div class="no-code">
+                <p>🔑 <strong>کد ندارید؟</strong></p>
+                <p>به پیامرسان <strong>بله</strong> بروید و به آیدی زیر پیام دهید:</p>
+                <p style="font-size: 1.3rem; margin: 0.5rem 0;">
+                    <span class="ble-id">@sobhan101095</span>
+                </p>
+                <a href="https://ble.ir/sobhan101095" target="_blank" class="ble-link">🚀 رفتن به پیامرسان بله</a>
+            </div>
         </div>
         
+        <div id="videoSection" class="video-section" style="display: none;">
+            <h3>🎬 جلسه اول</h3>
+            <p style="color: #666; margin-bottom: 1rem;">تبریک! کد شما تأیید شد. حالا می‌توانید جلسه اول را ببینید:</p>
+            <a href="https://www.aparat.com/v/bewg9bw" target="_blank" class="video-link">▶️ مشاهده جلسه اول</a>
+        </div>
         
         <div style="margin-top: 2rem;">
             <a href="index.html" class="btn-secondary">🏠 بازگشت به خانه</a>
             <a href="course_1.html" class="btn-primary">📖 بازگشت به صفحه دوره</a>
         </div>
     </div>
+    
+    <script>
+        // کد صحیح (میشه اینجا تغییرش داد)
+        const CORRECT_CODE = "1234";
+        
+        function verifyCode() {
+            const input = document.getElementById('codeInput');
+            const errorDiv = document.getElementById('codeError');
+            const successDiv = document.getElementById('codeSuccess');
+            const videoSection = document.getElementById('videoSection');
+            const code = input.value.trim();
+            
+            // مخفی کردن پیام‌های قبلی
+            errorDiv.style.display = 'none';
+            successDiv.style.display = 'none';
+            videoSection.style.display = 'none';
+            
+            if (code === "") {
+                errorDiv.textContent = '❌ لطفاً کد را وارد کنید!';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (code === CORRECT_CODE) {
+                successDiv.style.display = 'block';
+                // بعد از ۱ ثانیه ویدیو رو نشون بده
+                setTimeout(function() {
+                    videoSection.style.display = 'block';
+                    // اسکرول به بخش ویدیو
+                    videoSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 1000);
+            } else {
+                errorDiv.textContent = '❌ کد وارد شده صحیح نیست! لطفاً دوباره امتحان کنید.';
+                errorDiv.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        }
+        
+        // با زدن Enter هم کار کنه
+        document.getElementById('codeInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                verifyCode();
+            }
+        });
+    </script>
     
     </main>
 
