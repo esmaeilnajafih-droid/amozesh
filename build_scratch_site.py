@@ -1,6 +1,6 @@
 # build_scratch_site.py
 # تولیدکننده سایت آموزش اسکرچ و اسکرچ جونیور
-# با پنل مدیریت مخفی (فقط با آدرس مستقیم قابل دسترس)
+# با جستجوی واقعی (جاوااسکریپت)
 
 import os
 import datetime
@@ -23,7 +23,8 @@ SCRATCHJR_COURSES = [
         'topics': ['معرفی محیط برنامه', 'آشنایی با شخصیت‌ها', 'حرکت دادن شخصیت', 'اضافه کردن صدا', 'ذخیره کردن پروژه'],
         'color': '#FF6B6B',
         'emoji': '🎮',
-        'video_link': 'https://www.aparat.com/v/bewg9bw'
+        'video_link': 'https://www.aparat.com/v/bewg9bw',
+        'category': 'jr'
     },
     {
         'id': 2,
@@ -36,7 +37,8 @@ SCRATCHJR_COURSES = [
         'topics': ['حرکت‌های مختلف', 'تغییر ظاهر', 'ساخت صحنه‌های مختلف', 'تکنیک‌های انیمیشن‌سازی', 'پروژه نهایی'],
         'color': '#4ECDC4',
         'emoji': '🎬',
-        'video_link': ''
+        'video_link': 'https://www.aparat.com/v/bewg9bw',
+        'category': 'jr'
     },
     {
         'id': 3,
@@ -44,12 +46,13 @@ SCRATCHJR_COURSES = [
         'level': 'متوسط',
         'age': '۷ تا ۹ سال',
         'duration': '۸ جلسه',
-        'price': '۱۹۹,۰۰۰ تومان',
+        'price': 'رایگان',
         'description': 'ساخت بازی‌های تعاملی ساده با استفاده از بلوک‌های اسکرچ جونیور',
         'topics': ['مفهوم بازی‌سازی', 'ساخت بازی مسابقه', 'ساخت بازی جمع‌آوری', 'امتیازدهی', 'مراحل مختلف', 'پروژه نهایی'],
         'color': '#FFD93D',
         'emoji': '🎯',
-        'video_link': ''
+        'video_link': 'https://www.aparat.com/v/bewg9bw',
+        'category': 'jr'
     }
 ]
 
@@ -61,12 +64,13 @@ SCRATCH_COURSES = [
         'level': 'مبتدی',
         'age': '۸ تا ۱۰ سال',
         'duration': '۶ جلسه',
-        'price': 'رایگان',
+        'price': '۱۰۰ تومان',
         'description': 'آشنایی با محیط اسکرچ، بلوک‌ها و ساخت اولین پروژه',
         'topics': ['معرفی محیط اسکرچ', 'بلوک‌های حرکتی', 'بلوک‌های ظاهری', 'صداها', 'اولین بازی ساده'],
         'color': '#667eea',
         'emoji': '🐱',
-        'video_link': ''
+        'video_link': 'https://www.aparat.com/v/bewg9bw',
+        'category': 'scratch'
     },
     {
         'id': 5,
@@ -74,12 +78,13 @@ SCRATCH_COURSES = [
         'level': 'متوسط',
         'age': '۹ تا ۱۲ سال',
         'duration': '۱۰ جلسه',
-        'price': '۲۹۹,۰۰۰ تومان',
+        'price': '۱۰۰ تومان',
         'description': 'ساخت بازی‌های حرفه‌ای با اسکرچ شامل چندین مرحله و امتیاز',
         'topics': ['طراحی بازی', 'متغیرها و امتیاز', 'برخوردها', 'مراحل مختلف', 'ساخت بازی مار', 'پروژه نهایی'],
         'color': '#FF8A5C',
         'emoji': '🕹️',
-        'video_link': ''
+        'video_link': 'https://www.aparat.com/v/bewg9bw',
+        'category': 'scratch'
     },
     {
         'id': 6,
@@ -87,12 +92,13 @@ SCRATCH_COURSES = [
         'level': 'متوسط',
         'age': '۹ تا ۱۲ سال',
         'duration': '۸ جلسه',
-        'price': '۲۴۹,۰۰۰ تومان',
+        'price': '۱۰۰ تومان',
         'description': 'ساخت انیمیشن‌های حرفه‌ای با اسکرچ و تکنیک‌های پیشرفته',
         'topics': ['اصول انیمیشن', 'حرکت‌های پیشرفته', 'تغییر لباس', 'ساخت کارتون', 'صداگذاری', 'پروژه نهایی'],
         'color': '#A66CFF',
         'emoji': '🎨',
-        'video_link': ''
+        'video_link': 'https://www.aparat.com/v/bewg9bw',
+        'category': 'scratch'
     },
     {
         'id': 7,
@@ -100,17 +106,37 @@ SCRATCH_COURSES = [
         'level': 'پیشرفته',
         'age': '۱۰ تا ۱۴ سال',
         'duration': '۱۲ جلسه',
-        'price': '۳۹۹,۰۰۰ تومان',
+        'price': '۱۰۰ تومان',
         'description': 'پروژه‌های بزرگ و خلاقانه با اسکرچ شامل بازی، انیمیشن و داستان',
         'topics': ['ساخت بازی چندمرحله‌ای', 'ساخت نقاشی دیجیتال', 'ساخت موزیک', 'ساخت داستان تعاملی', 'پروژه نهایی بزرگ'],
         'color': '#FF6B6B',
         'emoji': '🌟',
-        'video_link': ''
+        'video_link': 'https://www.aparat.com/v/bewg9bw',
+        'category': 'scratch'
     }
 ]
 
 # ==========================================
-# ۲. CSS یکپارچه
+# ۲. کدهای معتبر
+# ==========================================
+
+# کدهای اسکرچ جونیور
+JR_CODES = [
+    "07586", "43464", "31245", "28545", "67649",
+    "64684", "54548", "13254", "08764", "31218",
+    "31246", "57664", "31136"
+]
+
+# کدهای اسکرچ
+SCRATCH_CODES = [
+    "5783", "388483", "2323", "7454", "7543",
+    "0963", "3484", "1344", "6722", "1039",
+    "6637", "5766", "8283", "1039", "6483",
+    "8488"
+]
+
+# ==========================================
+# ۳. CSS یکپارچه
 # ==========================================
 CSS_STYLE = """
 * {
@@ -350,10 +376,17 @@ nav ul a.active {
 }
 
 .course-card .price {
-    color: #FF6B6B;
     font-weight: bold;
     font-size: 1.1rem;
     margin: 0.5rem 0;
+}
+
+.course-card .price.free {
+    color: #4ECDC4;
+}
+
+.course-card .price.paid {
+    color: #FF6B6B;
 }
 
 .course-card .description {
@@ -518,7 +551,7 @@ nav ul a.active {
     margin-top: 2rem;
 }
 
-/* ===== صفحه ثبت‌نام با کد ===== */
+/* ===== صفحه ثبت‌نام ===== */
 .register-page {
     background: white;
     padding: 3rem;
@@ -587,6 +620,25 @@ nav ul a.active {
     color: #999;
     font-size: 1.1rem;
     padding: 1rem;
+}
+
+.register-page .price-tag {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.register-page .price-tag.free {
+    background: #d4edda;
+    color: #155724;
+}
+
+.register-page .price-tag.paid {
+    background: #f8d7da;
+    color: #721c24;
 }
 
 /* ===== بخش کد ===== */
@@ -718,6 +770,13 @@ footer {
     margin: 2rem 0;
 }
 
+h2 {
+    margin: 2rem 0 1rem;
+    color: #333;
+    text-align: center;
+}
+
+/* ===== جستجو ===== */
 .search-result {
     color: #764ba2;
     font-weight: bold;
@@ -736,81 +795,43 @@ footer {
     padding: 3rem 0;
 }
 
-h2 {
-    margin: 2rem 0 1rem;
-    color: #333;
-    text-align: center;
-}
-
-/* ===== پنل مدیریت (مخفی) ===== */
-.admin-panel {
+.search-page {
     background: white;
     padding: 2rem;
     border-radius: 20px;
     margin: 2rem 0;
+    text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-.admin-panel h2 {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.admin-panel .admin-subtitle {
-    color: #666;
-    margin-bottom: 1rem;
-}
-
-.admin-panel .admin-warning {
-    color: #999;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 1rem;
-    background: #fff3cd;
-    border-radius: 8px;
-    border-right: 4px solid #FFD93D;
-}
-
-.admin-panel .add-section {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-}
-
-.admin-panel .add-section h3 {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.admin-panel .add-section .add-group {
+.search-page .search-box {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    max-width: 500px;
+    margin: 1rem auto;
 }
 
-.admin-panel .add-section .add-group input {
+.search-page .search-box input {
+    flex: 1;
     padding: 0.7rem 1rem;
     border: 2px solid #ddd;
-    border-radius: 12px;
+    border-radius: 20px;
     font-size: 1rem;
     font-family: inherit;
-    width: 200px;
-    direction: ltr;
 }
 
-.admin-panel .add-section .add-group input:focus {
+.search-page .search-box input:focus {
     border-color: #667eea;
     outline: none;
 }
 
-.admin-panel .add-section .add-group .btn-add {
-    padding: 0.7rem 2rem;
+.search-page .search-box button {
+    padding: 0.7rem 1.5rem;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 20px;
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
@@ -818,104 +839,9 @@ h2 {
     font-family: inherit;
 }
 
-.admin-panel .add-section .add-group .btn-add:hover {
+.search-page .search-box button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-}
-
-.admin-panel .add-section .add-message {
-    margin-top: 0.5rem;
-    display: none;
-}
-
-.admin-panel .add-section .add-message.success {
-    color: #4ECDC4;
-    display: block;
-}
-
-.admin-panel .add-section .add-message.error {
-    color: #FF6B6B;
-    display: block;
-}
-
-.admin-panel .codes-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-}
-
-.admin-panel .codes-table th {
-    background: #667eea;
-    color: white;
-    padding: 12px;
-    text-align: center;
-}
-
-.admin-panel .codes-table td {
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
-
-.admin-panel .codes-table tr:hover {
-    background: #f8f9fa;
-}
-
-.admin-panel .codes-table .code-box {
-    font-family: monospace;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.admin-panel .codes-table .status-active {
-    color: #4ECDC4;
-    font-weight: bold;
-}
-
-.admin-panel .codes-table .btn-remove {
-    padding: 0.3rem 1rem;
-    background: #FF6B6B;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-    font-family: inherit;
-}
-
-.admin-panel .codes-table .btn-remove:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-}
-
-.admin-panel .admin-buttons {
-    margin-top: 2rem;
-    text-align: center;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.admin-panel .admin-buttons .btn-reset {
-    padding: 0.7rem 2rem;
-    background: #FFD93D;
-    color: #333;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-    font-family: inherit;
-    text-decoration: none;
-}
-
-.admin-panel .admin-buttons .btn-reset:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 217, 61, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -951,38 +877,23 @@ h2 {
         width: 100%;
     }
     
-    .admin-panel .add-section .add-group {
+    .search-page .search-box {
         flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .admin-panel .add-section .add-group input {
-        width: 100%;
-    }
-    
-    .admin-panel .codes-table {
-        font-size: 0.9rem;
-    }
-    
-    .admin-panel .codes-table th,
-    .admin-panel .codes-table td {
-        padding: 8px;
     }
 }
 """
 
 # ==========================================
-# ۳. توابع تولید صفحات
+# ۴. توابع تولید صفحات
 # ==========================================
 
 def render_page(content, title="اسکرچ و اسکرچ جونیور", active_page=""):
-    """تابع اصلی که همه صفحات رو با همون قالب میسازه - بدون لینک مدیریت"""
+    """تابع اصلی که همه صفحات رو با همون قالب میسازه"""
     
     active_home = 'active' if active_page == 'home' else ''
     active_jr = 'active' if active_page == 'jr' else ''
     active_scratch = 'active' if active_page == 'scratch' else ''
     active_about = 'active' if active_page == 'about' else ''
-    # active_admin حذف شد - کاربران مدیریت رو نمی‌بینن
     
     return f"""<!DOCTYPE html>
 <html lang="fa" dir="rtl">
@@ -1005,10 +916,9 @@ def render_page(content, title="اسکرچ و اسکرچ جونیور", active_p
                 <li><a href="scratchjr.html" class="{active_jr}">🎮 اسکرچ جونیور</a></li>
                 <li><a href="scratch.html" class="{active_scratch}">🐱 اسکرچ</a></li>
                 <li><a href="about.html" class="{active_about}">❓ درباره ما</a></li>
-                <!-- لینک مدیریت مخفی شده - کاربران نمی‌بینن -->
             </ul>
-            <form action="search.html" method="get" class="search-form">
-                <input type="text" name="q" placeholder="🔍 جستجو..." required>
+            <form action="search.html" method="get" class="search-form" id="searchForm">
+                <input type="text" name="q" id="searchInput" placeholder="🔍 جستجو..." required>
                 <button type="submit">🔍</button>
             </form>
         </nav>
@@ -1026,6 +936,17 @@ def render_page(content, title="اسکرچ و اسکرچ جونیور", active_p
             </p>
         </div>
     </footer>
+    
+    <script>
+        // جستجو با جاوااسکریپت
+        document.getElementById('searchForm').addEventListener('submit', function(e) {{
+            e.preventDefault();
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {{
+                window.location.href = 'search.html?q=' + encodeURIComponent(query);
+            }}
+        }});
+    </script>
 </body>
 </html>"""
 
@@ -1037,6 +958,7 @@ def generate_index():
     
     jr_cards = ""
     for course in preview_jr:
+        price_class = "free" if course['price'] == 'رایگان' else "paid"
         jr_cards += f"""
         <div class="course-card" style="border-top-color: {course['color']};">
             <span class="emoji">{course['emoji']}</span>
@@ -1044,13 +966,14 @@ def generate_index():
             <h3>{course['title']}</h3>
             <p class="level" style="color: {course['color']};">سطح: {course['level']}</p>
             <p class="age">👶 {course['age']}</p>
-            <p class="price">{course['price']}</p>
+            <p class="price {price_class}">{course['price']}</p>
             <a href="course_{course['id']}.html" class="btn-secondary btn-small">👀 مشاهده</a>
         </div>
         """
     
     scratch_cards = ""
     for course in preview_scratch:
+        price_class = "free" if course['price'] == 'رایگان' else "paid"
         scratch_cards += f"""
         <div class="course-card" style="border-top-color: {course['color']};">
             <span class="emoji">{course['emoji']}</span>
@@ -1058,7 +981,7 @@ def generate_index():
             <h3>{course['title']}</h3>
             <p class="level" style="color: {course['color']};">سطح: {course['level']}</p>
             <p class="age">👶 {course['age']}</p>
-            <p class="price">{course['price']}</p>
+            <p class="price {price_class}">{course['price']}</p>
             <a href="course_{course['id']}.html" class="btn-secondary btn-small">👀 مشاهده</a>
         </div>
         """
@@ -1068,8 +991,8 @@ def generate_index():
         <h2>🌟 به دنیای برنامه‌نویسی کودکان خوش آمدید! 🌟</h2>
         <p>🐱 اسکرچ و اسکرچ جونیور - یادگیری با بازی و خلاقیت</p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="scratchjr.html" class="btn-primary">🎮 اسکرچ جونیور (۵-۸ سال)</a>
-            <a href="scratch.html" class="btn-primary">🐱 اسکرچ (۸-۱۴ سال)</a>
+            <a href="scratchjr.html" class="btn-primary">🎮 اسکرچ جونیور (۵-۸ سال) - رایگان</a>
+            <a href="scratch.html" class="btn-primary">🐱 اسکرچ (۸-۱۴ سال) - ۱۰۰ تومان</a>
         </div>
     </section>
 
@@ -1088,13 +1011,13 @@ def generate_index():
         </div>
     </section>
 
-    <h2>🎮 دوره‌های اسکرچ جونیور</h2>
+    <h2>🎮 دوره‌های اسکرچ جونیور <span style="font-size: 1rem; color: #4ECDC4;">(رایگان)</span></h2>
     <div class="course-grid">{jr_cards}</div>
     <div class="text-center">
         <a href="scratchjr.html" class="btn-secondary">📚 همه دوره‌های اسکرچ جونیور</a>
     </div>
 
-    <h2>🐱 دوره‌های اسکرچ</h2>
+    <h2>🐱 دوره‌های اسکرچ <span style="font-size: 1rem; color: #FF6B6B;">(۱۰۰ تومان)</span></h2>
     <div class="course-grid">{scratch_cards}</div>
     <div class="text-center">
         <a href="scratch.html" class="btn-secondary">📚 همه دوره‌های اسکرچ</a>
@@ -1108,6 +1031,7 @@ def generate_scratchjr():
     """صفحه اسکرچ جونیور"""
     course_cards = ""
     for course in SCRATCHJR_COURSES:
+        price_class = "free" if course['price'] == 'رایگان' else "paid"
         course_cards += f"""
         <div class="course-card" style="border-top-color: {course['color']};">
             <span class="emoji">{course['emoji']}</span>
@@ -1115,7 +1039,7 @@ def generate_scratchjr():
             <h3>{course['title']}</h3>
             <p class="level" style="color: {course['color']};">سطح: {course['level']}</p>
             <p class="age">👶 {course['age']}</p>
-            <p class="price">{course['price']}</p>
+            <p class="price {price_class}">{course['price']}</p>
             <p class="description">{course['description'][:60]}...</p>
             <a href="course_{course['id']}.html" class="btn-secondary btn-small">👀 مشاهده</a>
         </div>
@@ -1124,7 +1048,8 @@ def generate_scratchjr():
     content = f"""
     <div class="category-info jr">
         <h3>🎮 اسکرچ جونیور</h3>
-        <p>مناسب برای کودکان ۵ تا ۸ سال | آموزش برنامه‌نویسی با بلوک‌های تصویری</p>
+        <p>مناسب برای کودکان ۵ تا ۸ سال | همه دوره‌ها <strong>رایگان</strong> 🎉</p>
+        <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">🔑 برای دسترسی به ویدیوها، کد ثبت‌نام نیاز است</p>
     </div>
     <div class="course-grid">{course_cards}</div>
     """
@@ -1136,6 +1061,7 @@ def generate_scratch():
     """صفحه اسکرچ"""
     course_cards = ""
     for course in SCRATCH_COURSES:
+        price_class = "free" if course['price'] == 'رایگان' else "paid"
         course_cards += f"""
         <div class="course-card" style="border-top-color: {course['color']};">
             <span class="emoji">{course['emoji']}</span>
@@ -1143,7 +1069,7 @@ def generate_scratch():
             <h3>{course['title']}</h3>
             <p class="level" style="color: {course['color']};">سطح: {course['level']}</p>
             <p class="age">👶 {course['age']}</p>
-            <p class="price">{course['price']}</p>
+            <p class="price {price_class}">{course['price']}</p>
             <p class="description">{course['description'][:60]}...</p>
             <a href="course_{course['id']}.html" class="btn-secondary btn-small">👀 مشاهده</a>
         </div>
@@ -1152,7 +1078,8 @@ def generate_scratch():
     content = f"""
     <div class="category-info scratch">
         <h3>🐱 اسکرچ</h3>
-        <p>مناسب برای کودکان ۸ تا ۱۴ سال | برنامه‌نویسی خلاقانه با اسکرچ</p>
+        <p>مناسب برای کودکان ۸ تا ۱۴ سال | هر دوره <strong>۱۰۰ تومان</strong> 💰</p>
+        <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">🔑 برای دسترسی به ویدیوها، کد ثبت‌نام نیاز است</p>
     </div>
     <div class="course-grid">{course_cards}</div>
     """
@@ -1167,12 +1094,15 @@ def generate_course_detail(course):
         topics_list += f"<li>✅ {topic}</li>"
     
     category_name = "اسکرچ جونیور" if course['id'] <= 3 else "اسکرچ"
-    video_link = course.get('video_link', '')
+    video_link = course.get('video_link', 'https://www.aparat.com/v/bewg9bw')
+    price_class = "free" if course['price'] == 'رایگان' else "paid"
     
     if video_link:
-        watch_button = f'<a href="{video_link}" target="_blank" class="btn-primary">🎥 جلسه اول را ببین</a>'
+        watch_button = f'<a href="{video_link}" target="_blank" class="btn-primary">🎥 جلسه اول را در آپارات ببین</a>'
     else:
         watch_button = '<span class="btn-primary btn-disabled">🎥 جلسه اول به زودی</span>'
+    
+    register_button = f'<a href="register_{course["id"]}.html" class="btn-success">📝 ثبت‌نام در دوره (نیاز به کد)</a>'
     
     content = f"""
     <div class="course-detail">
@@ -1185,7 +1115,7 @@ def generate_course_detail(course):
             <span>📊 سطح: {course['level']}</span>
             <span>👶 سن: {course['age']}</span>
             <span>⏱️ مدت: {course['duration']}</span>
-            <span>💰 {course['price']}</span>
+            <span class="price {price_class}">💰 {course['price']}</span>
         </div>
         <div class="detail-description">
             <h3>📖 توضیحات دوره</h3>
@@ -1195,9 +1125,10 @@ def generate_course_detail(course):
             <h3>📌 سرفصل‌ها</h3>
             <ul>{topics_list}</ul>
         </div>
+        <p style="text-align: center; color: #888; font-size: 0.9rem;">🔑 برای مشاهده ویدیوها، کد ثبت‌نام نیاز است</p>
         <div class="detail-buttons">
             {watch_button}
-            <a href="register_{course['id']}.html" class="btn-success">📝 ثبت‌نام در دوره</a>
+            {register_button}
             <a href="index.html" class="btn-secondary">🏠 بازگشت به خانه</a>
         </div>
     </div>
@@ -1207,25 +1138,30 @@ def generate_course_detail(course):
 
 
 def generate_register(course):
-    """صفحه ثبت‌نام با کد (بدون نمایش کدها)"""
-    
-    # فقط برای دوره اول (آشنایی با اسکرچ جونیور) فرم کد نمایش داده میشه
-    if course['id'] == 1:
-        return generate_register_with_code(course)
-    else:
-        return generate_register_simple(course)
+    """صفحه ثبت‌نام"""
+    return generate_register_with_code(course)
 
 
 def generate_register_with_code(course):
-    """صفحه ثبت‌نام با فرم ورود کد (ویژه دوره اول) - بدون نمایش کدها"""
+    """صفحه ثبت‌نام با کد"""
     
     video_link = course.get('video_link', 'https://www.aparat.com/v/bewg9bw')
+    
+    if course['id'] <= 3:
+        codes_list = JR_CODES
+    else:
+        codes_list = SCRATCH_CODES
+    
+    price_class = "free" if course['price'] == 'رایگان' else "paid"
+    codes_json = str(codes_list).replace("'", '"')
     
     content = f"""
     <div class="register-page">
         <span class="success-icon">🔐</span>
         <h2 style="color: #667eea;">ثبت‌نام در دوره</h2>
         <p class="course-name">{course['emoji']} {course['title']}</p>
+        
+        <div class="price-tag {price_class}">💰 {course['price']}</div>
         
         <div class="code-section">
             <div class="code-title">📝 کد ثبت‌نام خود را وارد کنید</div>
@@ -1241,7 +1177,7 @@ def generate_register_with_code(course):
             
             <div class="no-code">
                 <p>🔑 <strong>کد ندارید؟</strong></p>
-                <p>به پیامرسان <strong>بله</strong> بروید و به آیدی زیر پیام دهید:</p>
+                <p>برای دریافت کد، به پیامرسان <strong>بله</strong> بروید و به آیدی زیر پیام دهید:</p>
                 <p style="font-size: 1.3rem; margin: 0.5rem 0;">
                     <span class="ble-id">@sobhan101095</span>
                 </p>
@@ -1252,7 +1188,7 @@ def generate_register_with_code(course):
         <div id="videoSection" class="video-section" style="display: none;">
             <h3>🎬 جلسه اول</h3>
             <p style="color: #666; margin-bottom: 1rem;">تبریک! کد شما تأیید شد. حالا می‌توانید جلسه اول را ببینید:</p>
-            <a href="{video_link}" target="_blank" class="video-link">▶️ مشاهده جلسه اول</a>
+            <a href="{video_link}" target="_blank" class="video-link">▶️ مشاهده جلسه اول در آپارات</a>
         </div>
         
         <div style="margin-top: 2rem;">
@@ -1262,18 +1198,7 @@ def generate_register_with_code(course):
     </div>
     
     <script>
-        // ===== بارگذاری کدها از LocalStorage =====
-        function loadCodes() {{
-            const saved = localStorage.getItem('scratchCodes');
-            if (saved) {{
-                return JSON.parse(saved);
-            }}
-            const defaultCodes = ["1234", "5678", "9012", "3456", "7890"];
-            localStorage.setItem('scratchCodes', JSON.stringify(defaultCodes));
-            return defaultCodes;
-        }}
-        
-        const VALID_CODES = loadCodes();
+        const VALID_CODES = {codes_json};
         
         function verifyCode() {{
             const input = document.getElementById('codeInput');
@@ -1317,45 +1242,118 @@ def generate_register_with_code(course):
     return render_page(content, f"ثبت‌نام | {course['title']}")
 
 
-def generate_register_simple(course):
-    """صفحه ثبت‌نام ساده برای دوره‌های دیگر"""
+def generate_search():
+    """صفحه جستجو - با جاوااسکریپت"""
     
-    video_link = course.get('video_link', '')
+    # ساخت دیتای دوره‌ها به صورت JSON
+    all_courses = SCRATCHJR_COURSES + SCRATCH_COURSES
+    courses_json = []
+    for c in all_courses:
+        courses_json.append({
+            'id': c['id'],
+            'title': c['title'],
+            'level': c['level'],
+            'age': c['age'],
+            'price': c['price'],
+            'description': c['description'],
+            'color': c['color'],
+            'emoji': c['emoji'],
+            'category': c['category']
+        })
     
-    if video_link:
-        video_section = f"""
-        <div class="video-section">
-            <h3>🎬 جلسه اول</h3>
-            <p style="color: #666; margin-bottom: 1rem;">برای مشاهده جلسه اول روی دکمه زیر کلیک کنید:</p>
-            <a href="{video_link}" target="_blank" class="video-link">▶️ مشاهده جلسه اول</a>
-        </div>
-        """
-    else:
-        video_section = f"""
-        <div class="video-section">
-            <h3>🎬 جلسه اول</h3>
-            <p class="no-video">⏳ این دوره به زودی تکمیل می‌شود...</p>
-            <p style="color: #999; font-size: 0.9rem;">لطفاً چند روز دیگر مراجعه کنید</p>
-        </div>
-        """
+    import json
+    courses_data = json.dumps(courses_json, ensure_ascii=False)
     
     content = f"""
-    <div class="register-page">
-        <span class="success-icon">🎉</span>
-        <h2>ثبت‌نام شما با موفقیت انجام شد!</h2>
-        <p class="message">به دوره زیر خوش آمدید:</p>
-        <p class="course-name">{course['emoji']} {course['title']}</p>
+    <div class="search-page">
+        <h2>🔍 جستجوی دوره‌ها</h2>
+        <p style="color: #666; margin-bottom: 1rem;">نام دوره را وارد کنید و روی دکمه جستجو بزنید</p>
         
-        {video_section}
+        <div class="search-box">
+            <input type="text" id="searchQuery" placeholder="نام دوره را وارد کنید..." onkeyup="searchCourses()">
+            <button onclick="searchCourses()">🔍 جستجو</button>
+        </div>
         
-        <div style="margin-top: 2rem;">
-            <a href="index.html" class="btn-secondary">🏠 بازگشت به خانه</a>
-            <a href="course_{course['id']}.html" class="btn-primary">📖 بازگشت به صفحه دوره</a>
+        <div id="searchResults" class="course-grid" style="margin-top: 2rem;">
+            <!-- نتایج جستجو اینجا نمایش داده میشه -->
         </div>
     </div>
+    
+    <script>
+        // ===== دیتای همه دوره‌ها =====
+        const allCourses = {courses_data};
+        
+        function searchCourses() {{
+            const query = document.getElementById('searchQuery').value.trim().toLowerCase();
+            const resultsDiv = document.getElementById('searchResults');
+            
+            if (query === "") {{
+                resultsDiv.innerHTML = `
+                    <p style="text-align: center; color: #999; grid-column: 1 / -1; padding: 2rem;">
+                        🔍 نام دوره را وارد کنید تا نتایج نمایش داده شود
+                    </p>
+                `;
+                return;
+            }}
+            
+            // جستجو در عنوان و توضیحات
+            const results = allCourses.filter(c => 
+                c.title.toLowerCase().includes(query) || 
+                c.description.toLowerCase().includes(query)
+            );
+            
+            if (results.length === 0) {{
+                resultsDiv.innerHTML = `
+                    <p style="text-align: center; color: #666; grid-column: 1 / -1; padding: 3rem; font-size: 1.2rem;">
+                        😅 هیچ دوره‌ای برای "<strong>${{query}}</strong>" پیدا نشد!
+                    </p>
+                `;
+                return;
+            }}
+            
+            // نمایش نتایج
+            let html = '';
+            results.forEach(course => {{
+                const priceClass = course.price === 'رایگان' ? 'free' : 'paid';
+                const tagClass = course.category === 'jr' ? 'tag-jr' : 'tag-scratch';
+                const tagText = course.category === 'jr' ? '🎮 اسکرچ جونیور' : '🐱 اسکرچ';
+                
+                html += `
+                    <div class="course-card" style="border-top-color: ${{course.color}};">
+                        <span class="emoji">${{course.emoji}}</span>
+                        <span class="category-tag ${{tagClass}}">${{tagText}}</span>
+                        <h3>${{course.title}}</h3>
+                        <p class="level" style="color: ${{course.color}};">سطح: ${{course.level}}</p>
+                        <p class="age">👶 ${{course.age}}</p>
+                        <p class="price ${{priceClass}}">${{course.price}}</p>
+                        <a href="course_${{course.id}}.html" class="btn-secondary btn-small">👀 مشاهده</a>
+                    </div>
+                `;
+            }});
+            
+            resultsDiv.innerHTML = html;
+        }}
+        
+        // جستجوی خودکار با تایپ
+        document.getElementById('searchQuery').addEventListener('keyup', function(e) {{
+            if (e.key === 'Enter') {{
+                searchCourses();
+            }}
+        }});
+        
+        // اجرای جستجو در صورتی که پارامتر در آدرس باشه
+        window.onload = function() {{
+            const urlParams = new URLSearchParams(window.location.search);
+            const q = urlParams.get('q');
+            if (q) {{
+                document.getElementById('searchQuery').value = q;
+                searchCourses();
+            }}
+        }};
+    </script>
     """
     
-    return render_page(content, f"ثبت‌نام | {course['title']}")
+    return render_page(content, "جستجو | کدآکادمی کودکان")
 
 
 def generate_about():
@@ -1366,12 +1364,12 @@ def generate_about():
         <div style="font-size: 1.1rem; line-height: 2;">
             <p>🐱 <strong>کدآکادمی کودکان</strong> یک سایت آموزش برنامه‌نویسی برای کودکان است.</p>
             <p>🎯 هدف ما آموزش برنامه‌نویسی به کودکان ۵ تا ۱۴ سال با روشی ساده و سرگرم‌کننده است.</p>
-            <p>🎮 <strong>اسکرچ جونیور:</strong> مناسب برای کودکان ۵ تا ۸ سال</p>
-            <p>🐱 <strong>اسکرچ:</strong> مناسب برای کودکان ۸ تا ۱۴ سال</p>
+            <p>🎮 <strong>اسکرچ جونیور:</strong> مناسب برای کودکان ۵ تا ۸ سال | <strong>رایگان</strong> (نیاز به کد)</p>
+            <p>🐱 <strong>اسکرچ:</strong> مناسب برای کودکان ۸ تا ۱۴ سال | <strong>۱۰۰ تومان</strong> (نیاز به کد)</p>
             <br>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                <span style="background: #f8f9fa; padding: 0.5rem 1.5rem; border-radius: 20px;">🎮 ۳+ دوره اسکرچ جونیور</span>
-                <span style="background: #f8f9fa; padding: 0.5rem 1.5rem; border-radius: 20px;">🐱 ۴+ دوره اسکرچ</span>
+                <span style="background: #d4edda; padding: 0.5rem 1.5rem; border-radius: 20px; color: #155724;">🎮 ۳+ دوره رایگان اسکرچ جونیور</span>
+                <span style="background: #f8d7da; padding: 0.5rem 1.5rem; border-radius: 20px; color: #721c24;">🐱 ۴+ دوره اسکرچ (۱۰۰ تومان)</span>
                 <span style="background: #f8f9fa; padding: 0.5rem 1.5rem; border-radius: 20px;">👶 ۵ تا ۱۴ سال</span>
             </div>
         </div>
@@ -1383,182 +1381,17 @@ def generate_about():
     return render_page(content, "درباره ما | کدآکادمی کودکان", "about")
 
 
-def generate_search():
-    """صفحه جستجو (استاتیک)"""
-    content = """
-    <div style="background: white; padding: 2rem; border-radius: 20px; margin: 2rem 0; text-align: center;">
-        <h2>🔍 جستجوی دوره‌ها</h2>
-        <p style="font-size: 1.1rem; color: #666; margin: 1rem 0;">
-            برای جستجو، از کادر جستجو در بالای صفحه استفاده کنید.
-        </p>
-        <div style="display: flex; gap: 0.5rem; justify-content: center; max-width: 500px; margin: 0 auto;">
-            <input type="text" placeholder="نام دوره را وارد کنید..." style="flex:1; padding: 0.7rem 1rem; border: 2px solid #ddd; border-radius: 20px; font-size: 1rem; font-family: inherit;">
-            <button style="padding: 0.7rem 1.5rem; background: #667eea; color: white; border: none; border-radius: 20px; font-size: 1rem; cursor: pointer;">🔍</button>
-        </div>
-        <div style="margin-top: 2rem;">
-            <a href="index.html" class="btn-secondary">🏠 بازگشت به خانه</a>
-        </div>
-    </div>
-    """
-    return render_page(content, "جستجو | کدآکادمی کودکان")
-
-
-# ==========================================
-# ۴. پنل مدیریت (مخفی)
-# ==========================================
-
-def generate_admin():
-    """صفحه پنل مدیریت کدها - فقط با آدرس مستقیم قابل دسترس"""
-    
-    content = """
-    <div class="admin-panel">
-        <h2>🔑 پنل مدیریت کدها</h2>
-        <p class="admin-subtitle">مدیریت کدهای دسترسی به دوره‌ها (ذخیره در مرورگر)</p>
-        <div class="admin-warning">
-            ⚠️ این صفحه فقط با آدرس مستقیم قابل دسترسی است و در منوی سایت نمایش داده نمی‌شود.
-        </div>
-        
-        <div class="add-section">
-            <h3>➕ اضافه کردن کد جدید</h3>
-            <div class="add-group">
-                <input type="text" id="newCode" placeholder="کد جدید را وارد کنید..." dir="ltr">
-                <button class="btn-add" onclick="addCode()">➕ اضافه کن</button>
-            </div>
-            <div id="addMessage" class="add-message"></div>
-        </div>
-        
-        <h3>📋 لیست کدهای فعال</h3>
-        <table class="codes-table">
-            <thead>
-                <tr>
-                    <th>کد</th>
-                    <th>وضعیت</th>
-                    <th>عملیات</th>
-                </tr>
-            </thead>
-            <tbody id="codesTableBody">
-            </tbody>
-        </table>
-        
-        <div class="admin-buttons">
-            <button class="btn-reset" onclick="resetCodes()">🔄 ریست به حالت پیش‌فرض</button>
-            <a href="index.html" class="btn-secondary" style="padding: 0.7rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold;">🏠 بازگشت به خانه</a>
-        </div>
-    </div>
-    
-    <script>
-        // ===== مدیریت کدها در LocalStorage =====
-        
-        function loadCodes() {
-            const saved = localStorage.getItem('scratchCodes');
-            if (saved) {
-                return JSON.parse(saved);
-            }
-            const defaultCodes = ["1234", "5678", "9012", "3456", "7890"];
-            localStorage.setItem('scratchCodes', JSON.stringify(defaultCodes));
-            return defaultCodes;
-        }
-        
-        function saveCodes(codes) {
-            localStorage.setItem('scratchCodes', JSON.stringify(codes));
-            renderTable();
-        }
-        
-        function renderTable() {
-            const codes = loadCodes();
-            const tbody = document.getElementById('codesTableBody');
-            
-            if (codes.length === 0) {
-                tbody.innerHTML = `
-                    <tr>
-                        <td colspan="3" style="padding: 20px; color: #999;">هیچ کدی وجود ندارد!</td>
-                    </tr>
-                `;
-                return;
-            }
-            
-            let html = '';
-            codes.forEach(code => {
-                html += `
-                    <tr>
-                        <td><span class="code-box">${code}</span></td>
-                        <td><span class="status-active">✅ فعال</span></td>
-                        <td>
-                            <button class="btn-remove" onclick="removeCode('${code}')">🗑️ حذف</button>
-                        </td>
-                    </tr>
-                `;
-            });
-            tbody.innerHTML = html;
-        }
-        
-        function addCode() {
-            const input = document.getElementById('newCode');
-            const message = document.getElementById('addMessage');
-            const code = input.value.trim();
-            
-            if (code === "") {
-                message.textContent = '❌ لطفاً کد را وارد کنید!';
-                message.className = 'add-message error';
-                return;
-            }
-            
-            let codes = loadCodes();
-            if (codes.includes(code)) {
-                message.textContent = '❌ این کد قبلاً وجود دارد!';
-                message.className = 'add-message error';
-                return;
-            }
-            
-            codes.push(code);
-            saveCodes(codes);
-            message.textContent = '✅ کد با موفقیت اضافه شد!';
-            message.className = 'add-message success';
-            input.value = '';
-            
-            setTimeout(() => {
-                message.className = 'add-message';
-            }, 3000);
-        }
-        
-        function removeCode(code) {
-            if (!confirm(`آیا از حذف کد "${code}" مطمئن هستید؟`)) return;
-            
-            let codes = loadCodes();
-            codes = codes.filter(c => c !== code);
-            saveCodes(codes);
-        }
-        
-        function resetCodes() {
-            if (!confirm('همه کدها به حالت پیش‌فرض ریست می‌شوند! مطمئن هستید؟')) return;
-            
-            const defaultCodes = ["1234", "5678", "9012", "3456", "7890"];
-            localStorage.setItem('scratchCodes', JSON.stringify(defaultCodes));
-            renderTable();
-            
-            const message = document.getElementById('addMessage');
-            message.textContent = '✅ کدها با موفقیت ریست شدند!';
-            message.className = 'add-message success';
-            
-            setTimeout(() => {
-                message.className = 'add-message';
-            }, 3000);
-        }
-        
-        // بارگذاری اولیه
-        renderTable();
-    </script>
-    """
-    
-    return render_page(content, "مدیریت کدها | کدآکادمی کودکان")
-
-
 # ==========================================
 # ۵. تابع اصلی
 # ==========================================
 
 def main():
     print("🐱 در حال تولید سایت آموزش اسکرچ و اسکرچ جونیور...")
+    print("=" * 55)
+    print("🎮 اسکرچ جونیور: همه دوره‌ها رایگان + نیاز به کد")
+    print("🐱 اسکرچ: همه دوره‌ها ۱۰۰ تومان + نیاز به کد")
+    print("📹 ویدیوها از آپارات نمایش داده می‌شوند")
+    print("🔍 جستجو با جاوااسکریپت کار می‌کند")
     print("=" * 55)
     
     # ۱. صفحه اصلی
@@ -1581,17 +1414,12 @@ def main():
         f.write(generate_about())
     print("✅ about.html")
     
-    # ۵. جستجو
+    # ۵. جستجو (جدید با جاوااسکریپت)
     with open("search.html", "w", encoding="utf-8") as f:
         f.write(generate_search())
-    print("✅ search.html")
+    print("✅ search.html (جستجوی واقعی)")
     
-    # ۶. پنل مدیریت (مخفی - فقط با آدرس مستقیم)
-    with open("admin.html", "w", encoding="utf-8") as f:
-        f.write(generate_admin())
-    print("✅ admin.html (پنل مدیریت - مخفی)")
-    
-    # ۷. صفحات جزئیات و ثبت‌نام برای هر دوره
+    # ۶. صفحات جزئیات و ثبت‌نام برای هر دوره
     all_courses = SCRATCHJR_COURSES + SCRATCH_COURSES
     for course in all_courses:
         # صفحه جزئیات
@@ -1608,8 +1436,7 @@ def main():
     print(f"📍 مسیر فایل‌ها: {os.path.abspath('.')}")
     print("🌐 حالا می‌توانید فایل‌ها را در مرورگر باز کنید.")
     print("📂 فایل index.html را باز کنید تا سایت را ببینید.")
-    print("🔑 پنل مدیریت مخفی: admin.html (فقط با آدرس مستقیم)")
-    print("💡 کدها در LocalStorage مرورگر ذخیره می‌شوند.")
+    print("🔍 جستجو در صفحه search.html با جاوااسکریپت کار می‌کند.")
     print("=" * 55)
 
 
