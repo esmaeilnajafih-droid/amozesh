@@ -1,9 +1,10 @@
 # build_scratch_site.py
 # تولیدکننده سایت آموزش اسکرچ و اسکرچ جونیور
-# با جستجوی واقعی (جاوااسکریپت)
+# نسخه نهایی - کاملاً سازگار با گیت‌هاب Pages
 
 import os
 import datetime
+import json
 
 # ==========================================
 # ۱. دیتای دوره‌ها
@@ -938,7 +939,7 @@ def render_page(content, title="اسکرچ و اسکرچ جونیور", active_p
     </footer>
     
     <script>
-        // جستجو با جاوااسکریپت
+        // جستجو با جاوااسکریپت (کار روی گیت‌هاب)
         document.getElementById('searchForm').addEventListener('submit', function(e) {{
             e.preventDefault();
             const query = document.getElementById('searchInput').value.trim();
@@ -1153,7 +1154,7 @@ def generate_register_with_code(course):
         codes_list = SCRATCH_CODES
     
     price_class = "free" if course['price'] == 'رایگان' else "paid"
-    codes_json = str(codes_list).replace("'", '"')
+    codes_json = json.dumps(codes_list)
     
     content = f"""
     <div class="register-page">
@@ -1243,7 +1244,7 @@ def generate_register_with_code(course):
 
 
 def generate_search():
-    """صفحه جستجو - با جاوااسکریپت"""
+    """صفحه جستجو - با جاوااسکریپت (کار روی گیت‌هاب)"""
     
     # ساخت دیتای دوره‌ها به صورت JSON
     all_courses = SCRATCHJR_COURSES + SCRATCH_COURSES
@@ -1261,7 +1262,6 @@ def generate_search():
             'category': c['category']
         })
     
-    import json
     courses_data = json.dumps(courses_json, ensure_ascii=False)
     
     content = f"""
@@ -1270,12 +1270,14 @@ def generate_search():
         <p style="color: #666; margin-bottom: 1rem;">نام دوره را وارد کنید و روی دکمه جستجو بزنید</p>
         
         <div class="search-box">
-            <input type="text" id="searchQuery" placeholder="نام دوره را وارد کنید..." onkeyup="searchCourses()">
+            <input type="text" id="searchQuery" placeholder="نام دوره را وارد کنید...">
             <button onclick="searchCourses()">🔍 جستجو</button>
         </div>
         
         <div id="searchResults" class="course-grid" style="margin-top: 2rem;">
-            <!-- نتایج جستجو اینجا نمایش داده میشه -->
+            <p style="text-align: center; color: #999; grid-column: 1 / -1; padding: 2rem;">
+                🔍 نام دوره را وارد کنید تا نتایج نمایش داده شود
+            </p>
         </div>
     </div>
     
@@ -1334,14 +1336,14 @@ def generate_search():
             resultsDiv.innerHTML = html;
         }}
         
-        // جستجوی خودکار با تایپ
+        // جستجو با کلیک روی دکمه یا زدن Enter
         document.getElementById('searchQuery').addEventListener('keyup', function(e) {{
             if (e.key === 'Enter') {{
                 searchCourses();
             }}
         }});
         
-        // اجرای جستجو در صورتی که پارامتر در آدرس باشه
+        // اگر پارامتر در آدرس بود، خودش جستجو کنه
         window.onload = function() {{
             const urlParams = new URLSearchParams(window.location.search);
             const q = urlParams.get('q');
@@ -1391,7 +1393,7 @@ def main():
     print("🎮 اسکرچ جونیور: همه دوره‌ها رایگان + نیاز به کد")
     print("🐱 اسکرچ: همه دوره‌ها ۱۰۰ تومان + نیاز به کد")
     print("📹 ویدیوها از آپارات نمایش داده می‌شوند")
-    print("🔍 جستجو با جاوااسکریپت کار می‌کند")
+    print("🔍 جستجو با جاوااسکریپت کار می‌کند (سازگار با گیت‌هاب)")
     print("=" * 55)
     
     # ۱. صفحه اصلی
@@ -1414,10 +1416,10 @@ def main():
         f.write(generate_about())
     print("✅ about.html")
     
-    # ۵. جستجو (جدید با جاوااسکریپت)
+    # ۵. جستجو (نسخه سازگار با گیت‌هاب)
     with open("search.html", "w", encoding="utf-8") as f:
         f.write(generate_search())
-    print("✅ search.html (جستجوی واقعی)")
+    print("✅ search.html (جستجوی سازگار با گیت‌هاب)")
     
     # ۶. صفحات جزئیات و ثبت‌نام برای هر دوره
     all_courses = SCRATCHJR_COURSES + SCRATCH_COURSES
@@ -1437,6 +1439,7 @@ def main():
     print("🌐 حالا می‌توانید فایل‌ها را در مرورگر باز کنید.")
     print("📂 فایل index.html را باز کنید تا سایت را ببینید.")
     print("🔍 جستجو در صفحه search.html با جاوااسکریپت کار می‌کند.")
+    print("✅ کاملاً سازگار با گیت‌هاب Pages")
     print("=" * 55)
 
 
